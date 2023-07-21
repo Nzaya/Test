@@ -10,10 +10,9 @@
     <ng-container *ngFor="let medication of medications">
       <tr>
         <td>{{ medication.name }}</td>
-        <td>{{ medication.hours }} hours</td>
+        <td>{{ medication.hours }}</td>
         <td *ngFor="let day of days">
-          <!-- Add checkmark if medication is scheduled for the day -->
-          <!-- <span *ngIf="medication.schedule[day]">&#10004;</span> -->
+          <span *ngIf="medication.schedule[day]" class="checkmark">&#10004;</span>
         </td>
       </tr>
     </ng-container>
