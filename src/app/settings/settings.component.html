@@ -1,0 +1,21 @@
+<table class="custom-table">
+  <thead>
+    <tr>
+      <th>Medication</th>
+      <th>Hours</th>
+      <th *ngFor="let day of days">{{ day }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let medication of medications">
+      <tr>
+        <td>{{ medication.name }}</td>
+        <td>{{ medication.hours }} hours</td>
+        <td *ngFor="let day of days">
+          <!-- Add checkmark if medication is scheduled for the day -->
+          <!-- <span *ngIf="medication.schedule[day]">&#10004;</span> -->
+        </td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
